@@ -1,0 +1,2 @@
+controller,avg_ns_queue_full_day,avg_ew_queue_full_day,max_ns_queue_full_day,max_ew_queue_full_day,avg_ns_queue_peak_8am,avg_ew_queue_peak_8am,max_ns_queue_peak_8am,max_ew_queue_peak_8am
+fixed_time,0.9653645833333333,0.8994502314814815,8.0,8.0,2.4298611111111112,1.6104166666666666,8.0,7.0
