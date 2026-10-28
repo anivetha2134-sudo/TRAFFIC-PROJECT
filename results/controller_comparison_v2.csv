@@ -1,0 +1,3 @@
+,avg_wait_sec_per_vehicle,avg_ns_queue_full_day,avg_ew_queue_full_day,avg_ns_queue_8am,avg_ew_queue_8am,max_ns_queue,max_ew_queue,vehicles_arrived,vehicles_served
+fixed_time,13.26,0.86,0.82,1.99,1.45,12.0,11.0,10895.0,10895.0
+rule_based,7.5,0.49,0.45,1.18,0.92,7.0,7.0,10895.0,10895.0
