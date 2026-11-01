@@ -1,0 +1,10 @@
+seed,controller,avg_wait_sec_per_vehicle,avg_ns_queue_full_day,avg_ew_queue_full_day,avg_ns_queue_8am,avg_ew_queue_8am,max_ns_queue,max_ew_queue,vehicles_arrived,vehicles_served
+1,fixed_time,88.6,3.82,7.37,46.88,1.75,71,93,10903,10903
+1,rule_based,18.04,1.09,1.18,2.45,1.69,22,24,10903,10903
+1,ml_based,18.15,1.08,1.21,2.28,2.0,22,24,10903,10903
+2,fixed_time,73.08,2.61,6.66,28.04,2.02,46,83,10966,10965
+2,rule_based,16.4,1.09,0.99,3.1,1.94,23,19,10966,10966
+2,ml_based,16.49,1.09,1.0,3.1,1.94,23,19,10966,10966
+3,fixed_time,89.66,2.46,8.92,17.85,1.92,38,119,10968,10967
+3,rule_based,17.02,1.04,1.13,2.01,1.66,19,27,10968,10967
+3,ml_based,17.15,1.04,1.13,2.01,1.66,19,27,10968,10967

@@ -1,0 +1,4 @@
+controller,mean,std
+fixed_time,83.78,9.28
+ml_based,17.26,0.84
+rule_based,17.15,0.83
