@@ -10,6 +10,8 @@ A two-phase intersection (North-South and East-West), with traffic counted at 5-
 
 ## Progress
 
+## Progress
+
 - [x] Repository, folder structure, virtual environment
 - [x] Simulated traffic dataset (60 days, 5-minute intervals)
 - [x] Feature engineering (lag values, rolling averages, targets)
@@ -17,7 +19,7 @@ A two-phase intersection (North-South and East-West), with traffic counted at 5-
 - [x] Trained models saved, `src/predict.py` ready
 - [x] Intersection simulation with fixed-time, rule-based and ML-based controllers
 - [x] Multi-day and no-queue-sensor evaluation
-- [ ] Validation on real traffic data
+- [x] Validation of the prediction model on real traffic data (UCI and Kaggle)
 - [ ] YOLO vehicle-counting demo
 - [ ] Arduino hardware prototype
 - [ ] Streamlit dashboard
@@ -51,6 +53,34 @@ Average waiting time per vehicle, busy traffic, averaged over 3 unseen simulated
 | :--- | :--- | :--- | :--- | :--- |
 | With queue sensors | 83.78 s | 17.15 s | - | 17.26 s |
 | No queue sensors | 85.93 s | - | 34.83 s | 39.72 s |
+
+## Real-data validation (06_real_data.ipynb)
+
+Next-hour prediction, chronological split (train on the earlier 80%, test on the last 20%). Missing hours were dropped, not filled.
+
+**UCI Metro Interstate Traffic Volume** (hourly I-94 westbound, about 3,300 vehicles/hour; test period Dec 2017 - Sep 2018)
+
+| Method | MAE | R2 |
+| :--- | :--- | :--- |
+| Same hour yesterday | 564.4 | 0.729 |
+| Current hour | 582.9 | 0.831 |
+| Same hour last week | 350.7 | 0.884 |
+| Typical value for weekday and hour | 278.1 | 0.936 |
+| Random Forest | 148.6 | 0.986 |
+
+**Kaggle traffic prediction dataset** (hourly counts at 3 junctions, Nov 2015 - Jun 2017)
+
+| Junction | Avg vehicles/hour | MAE current hour | MAE typical weekday/hour | MAE Random Forest | R2 Random Forest |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 67.2 | 6.26 | 27.51 | 4.48 | 0.926 |
+| 2 | 23.7 | 2.94 | 11.76 | 3.15 | 0.742 |
+| 3 | 17.5 | 3.72 | 5.98 | 3.08 | 0.698 |
+
+Random Forest clearly beat the baselines on the high-volume highway and at junction 1, gave a modest gain at junction 3, and did not beat the current-hour baseline at junction 2. The benefit depends on traffic volume and regularity.
+
+**Data sources (not included in this repository; download and place in `data/raw/real/`):**
+- Hogue, J. (2019). Metro Interstate Traffic Volume. UCI Machine Learning Repository. https://doi.org/10.24432/C5X60B (CC BY 4.0)
+- Kaggle: "Traffic Prediction Dataset" (fedesoriano). Check the dataset page for its license.
 
 Adaptive control greatly reduced waiting time compared with fixed-time. ML prediction did not give a measurable benefit over simpler adaptive rules in this simulation.
 
