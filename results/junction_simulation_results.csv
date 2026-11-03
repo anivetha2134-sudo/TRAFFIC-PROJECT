@@ -1,0 +1,5 @@
+,,delay_s_full_day,delay_s_8am,delay_s_5pm,max_queue_Arm A (N),max_queue_Arm B (E),max_queue_Arm C (S),max_queue_Arm D (W),arrived,served,LOS_8am,LOS_5pm
+2-phase,fixed_time,12.34,12.9,13.25,6.0,8.0,7.0,7.0,10879.0,10877.0,B,B
+2-phase,rule_based,7.7,8.18,8.38,5.0,6.0,5.0,6.0,10879.0,10878.0,A,A
+4-phase,fixed_time,43.67,51.25,48.74,14.0,16.0,17.0,14.0,10879.0,10877.0,D,D
+4-phase,rule_based,22.61,24.35,26.36,10.0,11.0,10.0,8.0,10879.0,10878.0,C,C
